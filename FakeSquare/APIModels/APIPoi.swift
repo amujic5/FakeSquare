@@ -8,8 +8,9 @@
 
 import Foundation
 import ObjectMapper
+import MapKit
 
-struct APIPoi: Mappable {
+final class APIPoi: NSObject, Mappable {
 
     var poiId: String?
     var title: String?
@@ -20,11 +21,12 @@ struct APIPoi: Mappable {
     var imageURL: String = ""
     
     
-    init?(_ map: Map) {
+    required init?(_ map: Map) {
+        super.init()
         mapping(map)
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         poiId <- map["id"]
         title <- map["title"]
         address <- map["address"]
@@ -34,4 +36,14 @@ struct APIPoi: Mappable {
         lng <- map["lng"]
     }
     
+}
+
+extension APIPoi: MKAnnotation {
+    @objc var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
+    }
+    
+    var subtitle: String? {
+        return address
+    }
 }

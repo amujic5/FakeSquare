@@ -7,29 +7,72 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    var pois: [APIPoi] = []
+    private let _apiManager: APIManager = APIManager()
+    private let locationManager: CLLocationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        
+        mapView.showsCompass = true
+        mapView.showsUserLocation = true
+        
+        
+        _apiManager.pois { (pois) in
+            self.pois = pois
+            self.mapView.addAnnotations(self.pois)
+            self.mapView.setRegion(MKCoordinateRegion(center: self.pois[0].coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)), animated: true)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func locationButtonClicked(sender: UIButton) {
+        if let location = locationManager.location {
+            mapView.setCenterCoordinate(location.coordinate, animated: true)
+        }
     }
-    */
+    
+}
 
+extension MapViewController:  CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        mapView.showsUserLocation = true
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if let poi = annotation as? APIPoi {
+            let view =  MKPinAnnotationView(annotation: poi, reuseIdentifier: "")
+            let button = UIButton(type: .DetailDisclosure)
+            
+            
+            view.rightCalloutAccessoryView = button
+            view.canShowCallout = true
+            return view
+        }
+        
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print(view)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
+    
+    
 }

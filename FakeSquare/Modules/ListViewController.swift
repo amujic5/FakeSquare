@@ -13,6 +13,7 @@ final class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pois: [APIPoi] = []
     private let _apiManager: APIManager = APIManager()
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ final class ListViewController: UIViewController {
         _apiManager.pois { (pois) in
             self.pois = pois
             self.tableView.reloadData()
+            self.activityIndicatorView.stopAnimating()
         }
     }
 
