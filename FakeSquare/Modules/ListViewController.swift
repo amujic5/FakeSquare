@@ -24,6 +24,20 @@ final class ListViewController: UIViewController {
             self.activityIndicatorView.stopAnimating()
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let detailViewController = segue.destinationViewController as? DetailViewController,
+            poi = sender as? APIPoi
+            where segue.identifier == String(DetailViewController) {
+            detailViewController.apiPoi = poi
+            
+        }
+    }
 
 }
 
@@ -40,6 +54,11 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier(String(DetailViewController), sender: pois[indexPath.section])
     }
     
     

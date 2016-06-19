@@ -21,7 +21,11 @@ final class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         
-        mapView.showsCompass = true
+        if #available(iOS 9.0, *) {
+            mapView.showsCompass = true
+        } else {
+            // Fallback on earlier versions
+        }
         mapView.showsUserLocation = true
         
         
@@ -43,6 +47,14 @@ final class MapViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let detailViewController = segue.destinationViewController as? DetailViewController,
+            poi = sender as? APIPoi
+            where segue.identifier == String(DetailViewController) {
+            detailViewController.apiPoi = poi
+            
+        }
+    }
 }
 
 extension MapViewController:  CLLocationManagerDelegate {
@@ -67,7 +79,9 @@ extension MapViewController:  CLLocationManagerDelegate {
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        print(view)
+        if let poi = view.annotation as? APIPoi {
+            performSegueWithIdentifier(String(DetailViewController), sender: poi)
+        }
     }
 }
 

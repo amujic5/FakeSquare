@@ -19,6 +19,8 @@
 		5705D5441D16A1B600E9F0E8 /* APIPoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5431D16A1B600E9F0E8 /* APIPoi.swift */; };
 		5705D5461D16A49900E9F0E8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5451D16A49900E9F0E8 /* ListTableViewCell.swift */; };
 		5705D5491D16A9BC00E9F0E8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5481D16A9BC00E9F0E8 /* View.swift */; };
+		5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */; };
+		5705D54D1D16CEEB00E9F0E8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54C1D16CEEB00E9F0E8 /* String.swift */; };
 		629253828516C9187320F098 /* Pods_FakeSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		5705D5431D16A1B600E9F0E8 /* APIPoi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPoi.swift; sourceTree = "<group>"; };
 		5705D5451D16A49900E9F0E8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		5705D5481D16A9BC00E9F0E8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5705D54C1D16CEEB00E9F0E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9A68A5F572978344FC3A0992 /* Pods-FakeSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeSquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FakeSquare/Pods-FakeSquare.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeSquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				5705D5371D16A0A500E9F0E8 /* MapViewController.swift */,
+				5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */,
 				5705D5451D16A49900E9F0E8 /* ListTableViewCell.swift */,
 				5705D5391D16A0B200E9F0E8 /* ListViewController.swift */,
 				5705D53B1D16A0BC00E9F0E8 /* MomentViewController.swift */,
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5705D5481D16A9BC00E9F0E8 /* View.swift */,
+				5705D54C1D16CEEB00E9F0E8 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 				TargetAttributes = {
 					5705D5201D169C7700E9F0E8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KLD9S9KY48;
 					};
 				};
 			};
@@ -264,12 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5705D5411D16A15300E9F0E8 /* APIManager.swift in Sources */,
+				5705D54D1D16CEEB00E9F0E8 /* String.swift in Sources */,
 				5705D5461D16A49900E9F0E8 /* ListTableViewCell.swift in Sources */,
 				5705D53C1D16A0BC00E9F0E8 /* MomentViewController.swift in Sources */,
 				5705D5251D169C7700E9F0E8 /* AppDelegate.swift in Sources */,
 				5705D53E1D16A0C600E9F0E8 /* ProfileViewController.swift in Sources */,
 				5705D5491D16A9BC00E9F0E8 /* View.swift in Sources */,
 				5705D5381D16A0A500E9F0E8 /* MapViewController.swift in Sources */,
+				5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */,
 				5705D53A1D16A0B200E9F0E8 /* ListViewController.swift in Sources */,
 				5705D5441D16A1B600E9F0E8 /* APIPoi.swift in Sources */,
 			);
@@ -385,10 +394,14 @@
 			baseConfigurationReference = 9A68A5F572978344FC3A0992 /* Pods-FakeSquare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -397,10 +410,14 @@
 			baseConfigurationReference = 4457DD3B7E060E2136182F15 /* Pods-FakeSquare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
