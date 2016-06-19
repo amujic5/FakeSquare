@@ -1,0 +1,40 @@
+PODS:
+  - AHKNavigationController (1.3)
+  - Alamofire (3.4.1)
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.13.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.13.1):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.13.1):
+    - FBSDKCoreKit
+  - Kingfisher (2.4.1)
+  - ObjectMapper (0.19)
+
+DEPENDENCIES:
+  - AHKNavigationController
+  - Alamofire (~> 3.0)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - Kingfisher (~> 2.0)
+  - ObjectMapper (~> 0.19)
+
+SPEC CHECKSUMS:
+  AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: 2807fe0da2ddb49a1469da6d6ff597f99912980f
+  FBSDKLoginKit: 6d350cb6a22d6956e9d078885de6ee8a0ebc51b4
+  FBSDKShareKit: c9438df7573b33780ac8c3451201c5ebb260ffca
+  Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  ObjectMapper: a88114e5df20f055da63029f25cbc01014847c91
+
+PODFILE CHECKSUM: e63b693809486225a98162e694ac4f207bf5d9ba
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module AHKNavigationController {
+  umbrella header "AHKNavigationController-umbrella.h"
+
+  export *
+  module * { export * }
+}
