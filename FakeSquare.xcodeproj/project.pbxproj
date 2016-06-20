@@ -21,6 +21,7 @@
 		5705D5491D16A9BC00E9F0E8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5481D16A9BC00E9F0E8 /* View.swift */; };
 		5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */; };
 		5705D54D1D16CEEB00E9F0E8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54C1D16CEEB00E9F0E8 /* String.swift */; };
+		5705D5501D17CC9300E9F0E8 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54F1D17CC9300E9F0E8 /* Contacts.swift */; };
 		629253828516C9187320F098 /* Pods_FakeSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		5705D5481D16A9BC00E9F0E8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5705D54C1D16CEEB00E9F0E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5705D54F1D17CC9300E9F0E8 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		9A68A5F572978344FC3A0992 /* Pods-FakeSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeSquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FakeSquare/Pods-FakeSquare.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeSquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				5705D5241D169C7700E9F0E8 /* AppDelegate.swift */,
+				5705D54E1D17CC7600E9F0E8 /* Classes */,
 				5705D5471D16A9AF00E9F0E8 /* Extension */,
 				5705D5421D16A1A900E9F0E8 /* APIModels */,
 				5705D53F1D16A14100E9F0E8 /* Services */,
@@ -128,6 +131,14 @@
 				5705D54C1D16CEEB00E9F0E8 /* String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5705D54E1D17CC7600E9F0E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5705D54F1D17CC9300E9F0E8 /* Contacts.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		730FB9337300F91018F38E27 /* Pods */ = {
@@ -278,6 +289,7 @@
 				5705D53E1D16A0C600E9F0E8 /* ProfileViewController.swift in Sources */,
 				5705D5491D16A9BC00E9F0E8 /* View.swift in Sources */,
 				5705D5381D16A0A500E9F0E8 /* MapViewController.swift in Sources */,
+				5705D5501D17CC9300E9F0E8 /* Contacts.swift in Sources */,
 				5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */,
 				5705D53A1D16A0B200E9F0E8 /* ListViewController.swift in Sources */,
 				5705D5441D16A1B600E9F0E8 /* APIPoi.swift in Sources */,
@@ -397,7 +409,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,7 +425,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
