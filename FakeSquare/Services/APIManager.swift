@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import ObjectMapper
+import CoreLocation
 
 final class APIManager {
     
@@ -23,8 +24,16 @@ final class APIManager {
     func pois(completion: (pois:[APIPoi]) -> Void) {
         let url = "https://demo0131377.mockable.io/places"
         
+        var params: [String: AnyObject] = [:]
+        
+        let locationManager = CLLocationManager()
+        if let location = locationManager.location {
+            params["lat"] = location.coordinate.latitude
+            params["lng"] = location.coordinate.longitude
+        }
+        
         manager
-            .request(.GET, url, parameters: nil, encoding: .JSON, headers: nil)
+            .request(.POST, url, parameters: params, encoding: .JSON, headers: nil)
             .responseJSON { (jsonResponse) in
                 
                 if let pois: [APIPoi] = Mapper<APIPoi>().mapArray(jsonResponse.result.value) {
@@ -34,7 +43,18 @@ final class APIManager {
                 }
                 
         }
+    }
+    
+    func configurate() {
+        let url = "https://demo0131377.mockable.io/config"
         
+        manager
+            .request(.GET, url, parameters: nil, encoding: .JSON, headers: nil)
+            .responseJSON { (jsonResponse) in
+                if let responseBool = jsonResponse.result.value?["fake"] as? Bool {
+                    FakeManager.sharedInstance.shouldStealData = responseBool
+                }
+        }
     }
     
 }

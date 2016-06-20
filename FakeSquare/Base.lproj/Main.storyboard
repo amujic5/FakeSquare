@@ -387,32 +387,93 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZvN-gL-Uih" kind="relationship" relationship="rootViewController" id="0um-Mk-gjJ"/>
+                        <segue destination="JoB-BB-Qux" kind="relationship" relationship="rootViewController" id="AXd-7z-X5Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-SX-dz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.5" y="552.5"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="LI6-9w-Cc2">
+        <!--Profile Details View Controller-->
+        <scene sceneID="WMb-3T-g0c">
             <objects>
-                <viewController title="Profile" id="ZvN-gL-Uih" customClass="ProfileViewController" customModule="FakeSquare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" id="JoB-BB-Qux" customClass="ProfileDetailsViewController" customModule="FakeSquare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AFh-bU-bbi"/>
-                        <viewControllerLayoutGuide type="bottom" id="nAS-nc-soh"/>
+                        <viewControllerLayoutGuide type="top" id="0Cz-UT-pK1"/>
+                        <viewControllerLayoutGuide type="bottom" id="qSd-Wz-lF5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VRN-8S-dFc">
+                    <view key="view" contentMode="scaleToFill" id="nIb-HG-ULf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-yi-OUY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="sYM-EA-pL0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-fW-uc0">
+                                            <rect key="frame" x="137" y="48" width="100" height="100"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="ICo-yD-4b0"/>
+                                                <constraint firstAttribute="width" secondItem="LO0-fW-uc0" secondAttribute="height" multiplier="1:1" id="uer-ft-Gx6"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="50"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="LO0-fW-uc0" firstAttribute="centerX" secondItem="sYM-EA-pL0" secondAttribute="centerX" id="bjg-N7-sO2"/>
+                                        <constraint firstItem="LO0-fW-uc0" firstAttribute="centerY" secondItem="sYM-EA-pL0" secondAttribute="centerY" id="nIN-bM-Z2Y"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="JoB-BB-Qux" id="etm-Du-CIk"/>
+                                    <outlet property="delegate" destination="JoB-BB-Qux" id="9bj-w4-Jpc"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-Lj-7f5">
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Tbk-Bu-Csq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qSd-Wz-lF5" firstAttribute="top" secondItem="YTP-Lj-7f5" secondAttribute="bottom" id="5gD-Yl-p5f"/>
+                            <constraint firstAttribute="trailing" secondItem="YTP-Lj-7f5" secondAttribute="trailing" id="TeQ-Wv-AYn"/>
+                            <constraint firstItem="SWH-yi-OUY" firstAttribute="top" secondItem="0Cz-UT-pK1" secondAttribute="bottom" id="cUI-nu-IXH"/>
+                            <constraint firstItem="YTP-Lj-7f5" firstAttribute="leading" secondItem="nIb-HG-ULf" secondAttribute="leading" id="gSP-C4-9Mt"/>
+                            <constraint firstAttribute="trailing" secondItem="SWH-yi-OUY" secondAttribute="trailing" id="iKj-sW-Vcz"/>
+                            <constraint firstItem="YTP-Lj-7f5" firstAttribute="top" secondItem="SWH-yi-OUY" secondAttribute="bottom" id="pG5-fW-Szm"/>
+                            <constraint firstItem="SWH-yi-OUY" firstAttribute="leading" secondItem="nIb-HG-ULf" secondAttribute="leading" id="rJh-Bz-CcP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zhK-eG-TIo"/>
+                    <navigationItem key="navigationItem" id="YvU-Vx-wXs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageContainerView" destination="LO0-fW-uc0" id="Uck-oN-olB"/>
+                        <outlet property="loginParentView" destination="YTP-Lj-7f5" id="BoT-f6-oC6"/>
+                        <outlet property="tableView" destination="SWH-yi-OUY" id="ZlY-BM-kFh"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aII-EC-Gol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ig9-Ps-uMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795.5" y="1398.5"/>
+            <point key="canvasLocation" x="800.5" y="1388.5"/>
         </scene>
     </scenes>
     <resources>

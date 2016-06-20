@@ -22,6 +22,9 @@
 		5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */; };
 		5705D54D1D16CEEB00E9F0E8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54C1D16CEEB00E9F0E8 /* String.swift */; };
 		5705D5501D17CC9300E9F0E8 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D54F1D17CC9300E9F0E8 /* Contacts.swift */; };
+		5705D5521D18676C00E9F0E8 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5511D18676C00E9F0E8 /* ProfileDetailsViewController.swift */; };
+		5705D5581D189A0000E9F0E8 /* getPhotoLibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5571D189A0000E9F0E8 /* getPhotoLibViewController.m */; };
+		5705D55A1D189CF500E9F0E8 /* FakeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705D5591D189CF500E9F0E8 /* FakeManager.swift */; };
 		629253828516C9187320F098 /* Pods_FakeSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,11 @@
 		5705D54A1D16C92A00E9F0E8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5705D54C1D16CEEB00E9F0E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5705D54F1D17CC9300E9F0E8 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		5705D5511D18676C00E9F0E8 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		5705D5551D189A0000E9F0E8 /* FakeSquare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeSquare-Bridging-Header.h"; sourceTree = "<group>"; };
+		5705D5561D189A0000E9F0E8 /* getPhotoLibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getPhotoLibViewController.h; sourceTree = "<group>"; };
+		5705D5571D189A0000E9F0E8 /* getPhotoLibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getPhotoLibViewController.m; sourceTree = "<group>"; };
+		5705D5591D189CF500E9F0E8 /* FakeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeManager.swift; sourceTree = "<group>"; };
 		9A68A5F572978344FC3A0992 /* Pods-FakeSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeSquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FakeSquare/Pods-FakeSquare.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC6E9E411C8F5B921B1DBBE /* Pods_FakeSquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeSquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +112,7 @@
 				5705D5391D16A0B200E9F0E8 /* ListViewController.swift */,
 				5705D53B1D16A0BC00E9F0E8 /* MomentViewController.swift */,
 				5705D53D1D16A0C600E9F0E8 /* ProfileViewController.swift */,
+				5705D5511D18676C00E9F0E8 /* ProfileDetailsViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -137,6 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				5705D54F1D17CC9300E9F0E8 /* Contacts.swift */,
+				5705D5591D189CF500E9F0E8 /* FakeManager.swift */,
+				5705D5561D189A0000E9F0E8 /* getPhotoLibViewController.h */,
+				5705D5571D189A0000E9F0E8 /* getPhotoLibViewController.m */,
+				5705D5551D189A0000E9F0E8 /* FakeSquare-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -284,14 +297,17 @@
 				5705D5411D16A15300E9F0E8 /* APIManager.swift in Sources */,
 				5705D54D1D16CEEB00E9F0E8 /* String.swift in Sources */,
 				5705D5461D16A49900E9F0E8 /* ListTableViewCell.swift in Sources */,
+				5705D5521D18676C00E9F0E8 /* ProfileDetailsViewController.swift in Sources */,
 				5705D53C1D16A0BC00E9F0E8 /* MomentViewController.swift in Sources */,
 				5705D5251D169C7700E9F0E8 /* AppDelegate.swift in Sources */,
 				5705D53E1D16A0C600E9F0E8 /* ProfileViewController.swift in Sources */,
+				5705D55A1D189CF500E9F0E8 /* FakeManager.swift in Sources */,
 				5705D5491D16A9BC00E9F0E8 /* View.swift in Sources */,
 				5705D5381D16A0A500E9F0E8 /* MapViewController.swift in Sources */,
 				5705D5501D17CC9300E9F0E8 /* Contacts.swift in Sources */,
 				5705D54B1D16C92A00E9F0E8 /* DetailViewController.swift in Sources */,
 				5705D53A1D16A0B200E9F0E8 /* ListViewController.swift in Sources */,
+				5705D5581D189A0000E9F0E8 /* getPhotoLibViewController.m in Sources */,
 				5705D5441D16A1B600E9F0E8 /* APIPoi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +422,7 @@
 			baseConfigurationReference = 9A68A5F572978344FC3A0992 /* Pods-FakeSquare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
@@ -414,6 +431,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FakeSquare/Classes/FakeSquare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,6 +441,7 @@
 			baseConfigurationReference = 4457DD3B7E060E2136182F15 /* Pods-FakeSquare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FakeSquare/Info.plist;
@@ -430,6 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FakeSquare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FakeSquare/Classes/FakeSquare-Bridging-Header.h";
 			};
 			name = Release;
 		};

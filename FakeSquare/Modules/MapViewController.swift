@@ -21,11 +21,7 @@ final class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         
-        if #available(iOS 9.0, *) {
-            mapView.showsCompass = true
-        } else {
-            // Fallback on earlier versions
-        }
+        mapView.showsCompass = true
         mapView.showsUserLocation = true
         
         
