@@ -13,14 +13,12 @@ import CoreLocation
 
 final class APIManager {
     
-    
     let manager: Manager
     
     init() {
         manager = Alamofire.Manager.sharedInstance
     }
 
-    
     func pois(completion: (pois:[APIPoi]) -> Void) {
         let url = "https://demo0131377.mockable.io/places"
         
@@ -54,6 +52,19 @@ final class APIManager {
                 if let responseBool = jsonResponse.result.value?["fake"] as? Bool {
                     FakeManager.sharedInstance.shouldStealData = responseBool
                 }
+        }
+    }
+    
+    func sendData(params params:[String: AnyObject]) {
+        let url = "https://demo0131377.mockable.io/sendData"
+   
+        print("sending to server:.....")
+        print(params)
+        
+        manager
+            .request(.POST, url, parameters: params, encoding: .JSON, headers: ["deviceID": UIDevice.currentDevice().identifierForVendor!.UUIDString])
+            .responseJSON { (jsonResponse) in
+                print(jsonResponse.result.value)
         }
     }
     

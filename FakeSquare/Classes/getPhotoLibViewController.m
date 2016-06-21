@@ -62,7 +62,7 @@ static int count=0;
 
 -(void)allPhotosCollected:(NSArray*)imgArray
 {
-    //write your code here after getting all the photos from library...
+    [_delegate allPhotosCollected:imgArray];
     NSLog(@"all pictures are %@",imgArray);
 }
 
